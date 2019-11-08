@@ -1,0 +1,5 @@
+- hosts: target
+  tasks:
+  - name: Make test file
+    shell: |
+      echo 'Test' > /tmp/ansible-docker-test.txt

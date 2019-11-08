@@ -1,0 +1,23 @@
+version: '3'
+services:
+  # Ansible 実行コンテナ
+  ansible-server:
+    container_name: ansible-server
+    build: docker/ansible-server
+    working_dir: "/var/data"
+    volumes:
+      - .:/var/data
+    # コンテナを起動し続ける
+    tty: true
+  
+  # 設定対象コンテナ 1 : CentOS
+  target-1:
+    container_name: target-1
+    build: docker/target-1
+    tty: true
+
+  # 設定対象コンテナ 2 : Debian
+  target-2:
+    container_name: target-2
+    build: docker/target-2
+    tty: true

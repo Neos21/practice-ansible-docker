@@ -1,0 +1,6 @@
+# Ansible
+*.retry
+
+# System
+.DS_Store
+Thumbs.db
